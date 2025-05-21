@@ -1,0 +1,11 @@
+
+@import "../../styles/mixins";
+
+.custom_card{
+  margin-top: 15vh;
+  border-radius: 15px;
+  width: 19rem;
+  margin: auto; 
+  margin-top: 5%; 
+  @include shadowEffect
+}

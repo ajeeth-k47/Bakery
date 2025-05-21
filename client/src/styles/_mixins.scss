@@ -1,0 +1,5 @@
+@mixin shadowEffect{
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: all 100ms ease-in-out;
+    border: none;
+  }

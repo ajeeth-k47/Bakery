@@ -1,0 +1,52 @@
+@import "./mixins";
+
+.submission-button {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    margin: 0.8rem 0;
+    width:100%;
+    background: linear-gradient(to right, #4facfe, #2a7dde);
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  
+    &:hover {
+      background: linear-gradient(to right, #2a7dde, #4facfe);
+    }
+  
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  
+     @include shadowEffect;
+  }
+
+  .custom-circularBtn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0;
+    background-color:  #ECF2FF;
+  }
+
+  .btn-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+    color:#bdbdbf !important;
+  }
+
+  body{
+    background-color: #ECF2FF;
+    font-family: 'Montserrat', sans-serif;
+  }
+ 

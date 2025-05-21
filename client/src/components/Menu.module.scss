@@ -1,0 +1,26 @@
+
+@import "../styles/mixins";
+  
+  .scrollable-y-hidden-scrollbar {
+    max-height: 400px;      
+    overflow-y: auto;           
+    scrollbar-width: none;  
+  
+    &::-webkit-scrollbar {  
+      display: none;
+    }
+  }
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+  
