@@ -4,4 +4,13 @@
     background-image: url('https://static.vecteezy.com/system/resources/previews/002/045/877/large_2x/fancy-bakery-shop-with-trees-and-bike-vector.jpg');
     background-size: cover;
     background-position: center;
+
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;       
+  
+    padding-bottom: 3rem; // relaive values for consistent bottom spacing
+    text-align: center;
 }

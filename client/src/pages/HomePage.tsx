@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
   return (
     <HomePageLayout>
-      <div className="position-absolute bottom-0 start-50 translate-middle-x mb-5">
+      <div>
         <p className="h6 text-white">Welcome to our Bakery!</p>
         <Button onClick={handleGoToOrder}>Make an Order</Button>
       </div>
