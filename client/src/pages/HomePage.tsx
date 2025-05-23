@@ -2,6 +2,8 @@ import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import HomePageLayout from "../layouts/HomeLayout";
 import Button from "../components/UI/Button";
+import CardFooter from "../components/UI/CardFooter";
+import Card from "../components/UI/Card";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -12,10 +14,12 @@ const Home: React.FC = () => {
 
   return (
     <HomePageLayout>
-      <div>
-        <p className="h6 text-white">Welcome to our Bakery!</p>
-        <Button onClick={handleGoToOrder}>Make an Order</Button>
-      </div>
+      <Card>
+        <h5 className="pt-4 text-black-50 fw-bold">Welcome to our Bakery!</h5>
+        <CardFooter>
+          <Button onClick={handleGoToOrder}>Make an Order</Button>
+        </CardFooter>
+      </Card>
     </HomePageLayout>
   );
 };
