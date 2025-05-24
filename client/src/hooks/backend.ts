@@ -20,10 +20,7 @@ export const getMenuItems = async (): Promise<MenuItemType[]> => {
 
   const response = await fetch(`${BASE_URL}/storage`);
   const resData = await response.json();
-
   if (!response.ok) throw new Error("Failed to fetch menu.");
-
-  // assuming resData.storage is MenuItemType[]
   return resData.storage;
 };
 
@@ -37,8 +34,8 @@ export const submitOrder = async (
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items: orderItems }),
   });
-
-  if (!response.ok) throw new Error("Order failed.");
-
-  return await response.json();
+  const resData = await response.json();
+  if (!response.ok && resData.error) throw new Error(resData.error);
+  else if (!response.ok) throw new Error("Order failed");
+  return resData;
 };

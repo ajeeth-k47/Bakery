@@ -18,7 +18,7 @@ interface MenuItemType {
 const Menu: React.FC = () => {
   const [menuItems, setMenuItems] = useState<MenuItemType[]>([]);
   const [error, setError] = useState<string>("");
-  const { orderItems, clearOrder } = useOrder(); // Assuming orderItems is typed in context
+  const { orderItems, clearOrder } = useOrder();
   const navigate = useNavigate();
 
   const fetchData = async () => {
@@ -26,7 +26,7 @@ const Menu: React.FC = () => {
       const items = await getMenuItems();
       setMenuItems(items);
     } catch (err) {
-      setError("Failed to load menu.");
+      setError(err instanceof Error ? err.message : String(err));
     }
   };
 
@@ -36,12 +36,12 @@ const Menu: React.FC = () => {
 
   const handleOrder = async () => {
     try {
-      navigate("/success");
       await submitOrder(orderItems);
+      navigate("/success");
       clearOrder();
       await fetchData();
     } catch (err) {
-      setError("Failed to place order.");
+      setError(err instanceof Error ? err.message : String(err));
     }
   };
 
