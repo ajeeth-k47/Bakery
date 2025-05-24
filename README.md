@@ -17,7 +17,7 @@ Thanks for the opportunity! I really enjoyed working on this project.
 3. **Ordering Functionality**  
    - Added **increment** and **decrement** buttons to select item quantity.
    - Decrement is disabled at `0` quantity.
-   - Increment is disabled when the selected quantity reaches the product's stock.
+   - Increment is disabled when the selected quantity reaches the product's max stock.
 
 4. **Total Price Display**  
    Total amount is dynamically calculated and shown at the bottom of the order card.
@@ -35,7 +35,6 @@ Thanks for the opportunity! I really enjoyed working on this project.
 
 8. **Navigation Flow**  
    - Home → Order → Success, all controlled via buttons.
-   - Direct URL navigation is not encouraged but supported.
 
 9. **Error Handling**  
    - Graceful display of fallback error messages from API failures.
@@ -48,24 +47,7 @@ Thanks for the opportunity! I really enjoyed working on this project.
 
 ## 🗂 Folder Structure
 
-client/
-├── public/
-│ └── images/ # Static image assets
-├── src/
-│ ├── components/
-│ │ ├── Menu/ # Menu and menu item components
-│ │ └── UI/ # Reusable UI elements
-│ ├── constants/ # Route path constants
-│ ├── hooks/ # backed functions
-│ ├── layout/ # Layout components (e.g., HomeLayout)
-│ ├── pages/
-│ │ ├── HomePage/
-│ │ ├── OrderPage/
-│ │ └── SuccessPage/
-│ ├── store/ # Order context & reducer logic
-│ ├── styles/ # Global SCSS & mixins
-│ ├── types/ # TypeScript types
-│ └── App.tsx # Main entry point with routing
+![Folder structure](/assets/images/folderstructure.png)
 
 
 ## Pages Overview
