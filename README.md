@@ -1,109 +1,87 @@
-# Bakery App – Auto1 Frontend Challenge
-![bakery shop](https://static.vecteezy.com/system/resources/previews/002/045/877/large_2x/fancy-bakery-shop-with-trees-and-bike-vector.jpg)
+# 🍞 Bakery App – Auto1 Frontend Challenge
 
-## Context
+Thanks for the opportunity! I really enjoyed working on this project.
 
-The local bakery would like to extend its business by offering their products online. They approached you to help them build an app for this purpose.
+## Implemented Features
 
-This app should list all the different bakery products and needs to give the option to order them. 
+1. **Product Listing**  
+   Displayed all bakery items in a responsive card layout.
 
-Luckily the bakery provides an [API](#api-reference) as well as a [design](#design) for you to work with.
+2. **Product Details**  
+   Each product card shows:
+   - Name
+   - Thumbnail
+   - Price
+   - Available stock
 
-## Product Requirements
+3. **Ordering Functionality**  
+   - Added **increment** and **decrement** buttons to select item quantity.
+   - Decrement is disabled at `0` quantity.
+   - Increment is disabled when the selected quantity reaches the product's stock.
 
-As a customer:
+4. **Total Price Display**  
+   Total amount is dynamically calculated and shown at the bottom of the order card.
 
-- [ ] I want to see a list of all products the bakery offers.
-- [ ] For each product I want to see:
-    - [ ] Product name
-    - [ ] Product thumbnail
-    - [ ] Product price
-- [ ] For each product I want to be able: 
-  - [ ] to select the amount I want to order
-  - [ ] to not select more items than are available
-- [ ] I want to see the total price of all my selected products.
-- [ ] I want to see a "disabled" state if a product is out of stock.
-- [ ] I want to see a success page once I ordered
-- [ ] I want to be able to submit multiple orders
+5. **Out-of-Stock Handling**  
+   - Products with `0` stock are visually disabled and cannot be selected.
 
-## Your Task
+6. **Order Submission**  
+   - Displays a success page upon order submission.
+   - Includes a **"Submit another order"** button to restart the flow.
 
-Create a React application that fulfills all requirements above, plus any nice-to-have requirements you wish to include.
+7. **Cancel Order**  
+   - Users can cancel an order from the Order page.
+   - Resets quantities and navigates back to Home.
 
-For that, you will need to make requests to the API delivered in this repository.
+8. **Navigation Flow**  
+   - Home → Order → Success, all controlled via buttons.
+   - Direct URL navigation is not encouraged but supported.
 
-If you are not able to implement a particular requirement, please provide a description of what and why you could not implement it.
+9. **Error Handling**  
+   - Graceful display of fallback error messages from API failures.
 
-### Design
-For the layout of each page, please refer to the provided screens:
+## 🛠 Tech Stack
 
-- [Index page](./assets/screens/index.png)
-- [Success page](./assets/screens/success.png)
+- **React** with **TypeScript**
+- **SCSS** for styles
+- **Bootstrap 5** for layout and components
 
-Font being used in these screens is [Montserrat](https://fonts.google.com/specimen/Montserrat) and can be embedded from Google Fonts.
+## 🗂 Folder Structure
 
-## Tech Requirements
-
-- React
-- Bootstrap 3, 4 or 5
-- Using any CSS preprocessor is a plus
-
-## Instructions
-
-- Fork this repo
-- Build a clean and well-structured solution
-- Send it to [frontend-marketing-challenge@auto1-group.com](mailto:frontend-marketing-challenge@auto1-group.com) as a zip container (please name is as A1G-FE-challenge-${your_name})
-
-## API Reference
-
-#### Get all items
-
-```http
-  GET /api/storage
-```
-
-- Returns an array `storage`
-- Inside of `storage` are multiple objects with the following structure:
-
-| Key | Type | Description |
-| :-------- | :------- | :--- |
-| `name` | `string` | Name of item |
-| `stock` | `integer` | Number of items in stock |
-| `price` | `number` | Price of item |
-
-#### Post order
-
-```http
-  POST /api/order
-```
-
-- Expects an array `items`
-- Inside of `items` one or multiple objects of the following structure are expected:
-
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| `name` | `string` | **Required**. name of item to order |
-| `quantity` | `integer` | **Required**. quantity of item to order |
-
-- the api will return status code 200 and `{message: 'success'}` if the order went through
-- the api will return status code 400 and `{error: 'ERROR_MESSAGE', errorItem: 'ITEM_NAME'}` if the quantity is too high for a certain item
-
-## Setup and run server
-```
-cd A1G-FE-challenge
-npm i
-npm run start
-```
+client/
+├── public/
+│ └── images/ # Static image assets
+├── src/
+│ ├── components/
+│ │ ├── Menu/ # Menu and menu item components
+│ │ └── UI/ # Reusable UI elements
+│ ├── constants/ # Route path constants
+│ ├── hooks/ # backed functions
+│ ├── layout/ # Layout components (e.g., HomeLayout)
+│ ├── pages/
+│ │ ├── HomePage/
+│ │ ├── OrderPage/
+│ │ └── SuccessPage/
+│ ├── store/ # Order context & reducer logic
+│ ├── styles/ # Global SCSS & mixins
+│ ├── types/ # TypeScript types
+│ └── App.tsx # Main entry point with routing
 
 
-## Setup and run frontend
-```
-cd A1G-FE-challenge/client
-npm i
-npm run start
-```
+## Pages Overview
+
+- **Home Page**  
+  Intro screen with a button to start an order.
+
+- **Order Page**  
+  List of products with interactive quantity controls and total price.
+
+- **Success Page**  
+  Confirmation screen after a successful order, with an option to order again.
 
 
-## Credits
 
-Icons made by [Freepik](https://www.freepik.com)</a> from [https://www.flaticon.com/](www.flaticon.com)
+## Thanks Again!
+
+This was a great challenge that combined UX thinking with frontend implementation.  
+Looking forward to any feedback!
