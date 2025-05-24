@@ -17,9 +17,18 @@ let storage = [
   { name: "Cake", stock: 3, price: 8.5 },
 ];
 
+const allowedOrigins = ["http://localhost:3000", "http://localhost:3002"];
+
 app.use(
   cors({
-    origin: "http://localhost:3000", // allow your React frontend
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
   })
 );
 

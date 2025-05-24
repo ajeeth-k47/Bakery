@@ -20,7 +20,6 @@ interface OrderContextType {
   clearOrder: () => void;
 }
 
-// Create context with undefined default, to enforce provider usage
 const OrderContext = createContext<OrderContextType | undefined>(undefined);
 
 // Hook to use the context with safety check
@@ -63,11 +62,9 @@ const orderReducer = (state: OrderState, action: Action): OrderState => {
   }
 };
 
-interface OrderProviderProps {
-  children: ReactNode;
-}
-
-export const OrderProvider: React.FC<OrderProviderProps> = ({ children }) => {
+export const OrderProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [orderItems, dispatch] = useReducer(orderReducer, []);
 
   const addItem = (item: Omit<OrderItem, "quantity">) =>

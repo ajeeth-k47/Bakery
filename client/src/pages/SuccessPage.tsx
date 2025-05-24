@@ -19,6 +19,7 @@ const Success: React.FC = () => {
             className="img-fluid mb-4"
             src="/images/fireworks.png"
             alt="Fireworks celebrating order success"
+            loading="lazy"
           />
           <h2 className="fw-bold mb-2">Thank you!</h2>
           <p className="text-black-50 mb-4">

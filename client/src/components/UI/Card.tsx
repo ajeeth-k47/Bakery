@@ -1,11 +1,7 @@
 import React, { ReactNode } from "react";
 import styles from "./Card.module.scss";
 
-interface CardProps {
-  children: ReactNode;
-}
-
-const Card: React.FC<CardProps> = ({ children }) => {
+const Card: React.FC<{ children: ReactNode }> = ({ children }) => {
   return <div className={`card ${styles.custom_card}`}>{children}</div>;
 };
 

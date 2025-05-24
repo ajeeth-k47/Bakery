@@ -11,7 +11,7 @@
     "node": ">=16.0.0"
   },
   "keywords": [],
-  "author": "Horst Jahns",
+  "author": "Ajeeth Kumarasamy",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

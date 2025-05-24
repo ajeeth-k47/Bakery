@@ -5,14 +5,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/HomePage";
 import Order from "./pages/OrderPage";
 import Success from "./pages/SuccessPage";
+import { ROUTES } from "./constants/routes";
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/success" element={<Success />} />
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.ORDER} element={<Order />} />
+        <Route path={ROUTES.SUCCESS} element={<Success />} />
       </Routes>
     </Router>
   );
