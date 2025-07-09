@@ -1,6 +1,6 @@
-# 🍞 Bakery App – Auto1 Frontend Challenge
+# 🍞 Bakery App 
 
-Thanks for the opportunity! I really enjoyed working on this project.
+This application allows the users to order bakery items
 
 ## Implemented Features
 
@@ -63,7 +63,4 @@ Thanks for the opportunity! I really enjoyed working on this project.
 
 
 
-## Thanks Again!
 
-This was a great challenge that combined UX thinking with frontend implementation.  
-Looking forward to any feedback!
